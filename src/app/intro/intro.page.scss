@@ -1,0 +1,30 @@
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .red-tittle{
+    color: #ff0000;
+  }
+  
+  .slide-1{
+    background-color:aqua;
+    color: black;
+  }
+  .slide-2{
+    background-color:rgb(236, 184, 12);
+    color: black;
+  }
+  .slide-3{
+    background-color:rgb(17, 206, 42);
+    color: black;
+  }
