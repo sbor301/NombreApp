@@ -12,19 +12,47 @@ swiper-slide {
   }
   
   
-  .red-tittle{
+  .title{
     color: #ff0000;
+    font-family: "Anton", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 800%;
   }
   
   .slide-1{
-    background-color:aqua;
-    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 120%;
+    
   }
   .slide-2{
-    background-color:rgb(236, 184, 12);
-    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 120%;
+
   }
   .slide-3{
-    background-color:rgb(17, 206, 42);
-    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 120%;
   }
+
+  .imagen{
+    width: 30%;
+  }
+
+.subtext{
+  font-family: "Josefin Sans", sans-serif;
+  font-style: normal;
+  text-decoration: none;
+  margin: 10px;
+  color: white;
+  
+}
