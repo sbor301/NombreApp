@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements OnInit {
+export class IntroPage {
   slides = [
     {
       title: "MORA",
@@ -29,14 +30,19 @@ export class IntroPage implements OnInit {
       class: "slide-3",
     }
   ]
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private storage: Storage) { }
 
-  ngOnInit() {
+  ionViewDidEnter(){
+    console.log("Ya entre y vi la intro")
+    this.storage.set('mostreLaIntro', true);
   }
 
-  goToIntro(){
+  goToHome(){
     console.log("go to home");
     this.router.navigateByUrl('/home');
+    
+    
   }
 
 }
