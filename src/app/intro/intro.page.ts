@@ -33,16 +33,18 @@ export class IntroPage {
   constructor(private router: Router,
     private storage: Storage) { }
 
-  ionViewDidEnter(){
-    console.log("Ya entre y vi la intro")
-    this.storage.set('mostreLaIntro', true);
-  }
-
+    
   goToHome(){
     console.log("go to home");
     this.router.navigateByUrl('/home');
     
     
+  }
+
+
+  ionViewDidEnter(){
+    console.log("Ya entre y vi la intro")
+    this.storage.set('mostreLaIntro', true);
   }
 
 }
