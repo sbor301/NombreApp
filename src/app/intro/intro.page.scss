@@ -17,7 +17,7 @@ swiper-slide {
     font-family: "Anton", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 500%;
+    font-size: 300%;
   }
   
   .slide-1{
@@ -25,7 +25,8 @@ swiper-slide {
     font-weight: 400;
     font-style: normal;
     color: white;
-    font-size: 120%;
+    font-size: 100%;
+    text-align: center;
     
   }
   .slide-2{
@@ -33,7 +34,8 @@ swiper-slide {
     font-weight: 400;
     font-style: normal;
     color: white;
-    font-size: 120%;
+    font-size: 100%;
+    text-align: center;
 
   }
   .slide-3{
@@ -41,11 +43,12 @@ swiper-slide {
     font-weight: 400;
     font-style: normal;
     color: white;
-    font-size: 120%;
+    font-size: 100%;
+    text-align: center;
   }
 
   .imagen{
-    width: 30%;
+    width: 80%;
   }
 
 .subtext{
@@ -63,7 +66,8 @@ swiper-slide {
   font-family: "Anton", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 500%;
+  font-size: 300%;
   text-align: center;
   text-shadow: 4px 4px 6px rgba(255, 0, 0, 0.5);
 }
+
