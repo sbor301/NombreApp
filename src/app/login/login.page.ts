@@ -51,15 +51,12 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  login(login_data: any){
-    console.log(login_data);
-    this.authService.loginUser(login_data).then(res =>{
-      this.loginMessage= res;
-      this.storage.set('userLoggedIn', true);
-      console.log('login correcto me voy al home');
-      this.navCtrl.navigateForward('/home');
-    }).catch(err =>{
-      this.loginMessage = err;
-    })
+  login(login_data: any) {
+    this.authService.loginUser(login_data).then(() => {
+      console.log('Inicio de sesión correcto, me voy a la página principal');
+      this.navCtrl.navigateForward('/home'); // Asegúrate de que esta es la ruta correcta a tu página principal
+    }).catch((error) => {
+      console.log('Error al iniciar sesión:', error);
+    });
   }
 }

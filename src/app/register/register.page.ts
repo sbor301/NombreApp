@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { AuthService } from '../services/auth.service';
 
 export function confirmPasswordValidator(control: AbstractControl): { [key: string]: boolean } | null {
   const password = control.get('password');
@@ -49,6 +50,7 @@ export class RegisterPage implements OnInit {
     private formBuilder: FormBuilder,
     private navCtrl: NavController,
     private storage: Storage,
+    private authService: AuthService,
   
   ) {
     this.registerForm = this.formBuilder.group({
@@ -95,10 +97,11 @@ export class RegisterPage implements OnInit {
   }
 
   register(register_data: any) {
-    console.log(register_data);
-
-    this.storage.set('userRegistered', true);
-    console.log('Registro correcto, me voy al login');
-    this.navCtrl.navigateForward('/login');
+    this.authService.registerUser(register_data).then(() => {
+      console.log('Registro correcto, me voy al login');
+      this.navCtrl.navigateForward('/login');
+    }).catch((error) => {
+      console.log('Error al registrar:', error);
+    });
   }
 }

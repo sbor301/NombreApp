@@ -16,16 +16,12 @@
 
 .register{
     
-    color: black;
-    background-color: white;
+    color: white;
     text-align: center;
-    text-decoration: none;
-
+    text-decoration-color: white;
+    text-decoration: underline;
 }
 
-.registerL{
-    text-decoration: none;
-}
 .register:hover{
     background-color: grey;
     color: white;

@@ -76,13 +76,14 @@
       </div>
       </ng-container>
     </div>
+    
     <ion-item>
       <ion-input label="Confirmar contraseña" labelPlacement="floating" placeholder="Confirma tu contraseña" formControlName="conPassword" type=""></ion-input>
     </ion-item>
     <div class="validation_messages">
       <ng-container *ngFor="let validation of Validation_messages.conPassword">
         <div *ngIf="
-          (registerForm.get('conPassword')?.hasError(validation.type) &&
+          (registerForm.hasError(validation.type) &&
           (registerForm.get('conPassword')?.dirty))
         "> <ion-button id="hover-trigger">?</ion-button>
           <ion-popover trigger="hover-trigger" triggerAction="hover">
@@ -93,8 +94,6 @@
         </div>
       </ng-container>
     </div>
-    
-    
     
     <ion-button shape="round" color="dark" type="submit"[disabled]="!registerForm.valid" expand="full">Registrarse</ion-button>
   </form> 
