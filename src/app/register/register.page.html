@@ -1,0 +1,106 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title class="tit_log">REGISTRO</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+  <ion-content>
+  <ion-avatar class="center-avatar">
+    <img src="assets/images/user.png" alt="logo" class="logo">
+  </ion-avatar>
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+    <ion-item>
+      <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingresa tu nombre" formControlName="nombre" type=""></ion-input>
+    </ion-item>
+      <div class="validation_messages">
+        <ng-container *ngFor="let validation of Validation_messages.nombre">
+          <div *ngIf="
+          (registerForm.get('nombre')?.hasError(validation.type) &&
+          (registerForm.get('nombre')?.dirty))
+          "> <ion-button id="hover-trigger">?</ion-button>
+          <ion-popover trigger="hover-trigger" triggerAction="hover">
+            <ng-template>
+              <ion-content class="ion-padding"> {{validation.message}}</ion-content>
+            </ng-template>
+          </ion-popover>
+        </div>
+        </ng-container>
+      </div>
+      <ion-item>
+        <ion-input label="Apellido" labelPlacement="floating" placeholder="Ingresa tu apellido" formControlName="apellido" type=""></ion-input>
+      </ion-item>
+        <div class="validation_messages">
+          <ng-container *ngFor="let validation of Validation_messages.apellido">
+            <div *ngIf="
+            (registerForm.get('apellido')?.hasError(validation.type) &&
+            (registerForm.get('apellido')?.dirty))
+            "> <ion-button id="hover-trigger">?</ion-button>
+            <ion-popover trigger="hover-trigger" triggerAction="hover">
+              <ng-template>
+                <ion-content class="ion-padding"> {{validation.message}}</ion-content>
+              </ng-template>
+            </ion-popover>
+          </div>
+          </ng-container>
+        </div>
+    <ion-item class="email">
+    <ion-input label="Email" labelPlacement="floating" placeholder="Ingresa tu email" formControlName="email"></ion-input>
+  </ion-item>
+    <div class="validation_messages">
+      <ng-container *ngFor="let validation of Validation_messages.email">
+        <div *ngIf="
+        (registerForm.get('email')?.hasError(validation.type) &&
+        registerForm.get('email')?.dirty)
+        "><ion-button id="hover-trigger">?</ion-button>
+        <ion-popover trigger="hover-trigger" triggerAction="hover">
+          <ng-template>
+            <ion-content class="ion-padding"> {{validation.message}}</ion-content>
+          </ng-template>
+        </ion-popover></div>
+      </ng-container>
+    </div>
+    <ion-item>
+    <ion-input label="Contraseña" labelPlacement="floating" placeholder="Ingresa tu contraseña" formControlName="password" type=""></ion-input>
+  </ion-item>
+    <div class="validation_messages">
+      <ng-container *ngFor="let validation of Validation_messages.password">
+        <div *ngIf="
+        (registerForm.get('password')?.hasError(validation.type) &&
+        (registerForm.get('password')?.dirty))
+        "> <ion-button id="hover-trigger">?</ion-button>
+        <ion-popover trigger="hover-trigger" triggerAction="hover">
+          <ng-template>
+            <ion-content class="ion-padding"> {{validation.message}}</ion-content>
+          </ng-template>
+        </ion-popover>
+      </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-input label="Confirmar contraseña" labelPlacement="floating" placeholder="Confirma tu contraseña" formControlName="conPassword" type=""></ion-input>
+    </ion-item>
+    <div class="validation_messages">
+      <ng-container *ngFor="let validation of Validation_messages.conPassword">
+        <div *ngIf="
+          (registerForm.get('conPassword')?.hasError(validation.type) &&
+          (registerForm.get('conPassword')?.dirty))
+        "> <ion-button id="hover-trigger">?</ion-button>
+          <ion-popover trigger="hover-trigger" triggerAction="hover">
+            <ng-template>
+              <ion-content class="ion-padding"> {{validation.message}}</ion-content>
+            </ng-template>
+          </ion-popover>
+        </div>
+      </ng-container>
+    </div>
+    
+    
+    
+    <ion-button shape="round" color="dark" type="submit"[disabled]="!registerForm.valid" expand="full">Registrarse</ion-button>
+  </form> 
+  <div class="validation_messages">
+    {{registerMessage}}
+  </div>
+</ion-content>
+
+
