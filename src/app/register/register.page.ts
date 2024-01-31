@@ -104,4 +104,8 @@ export class RegisterPage implements OnInit {
       console.log('Error al registrar:', error);
     });
   }
+
+  goToLogin(){
+    this.navCtrl.navigateBack("/login");
+  }
 }

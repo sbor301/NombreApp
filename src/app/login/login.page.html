@@ -1,3 +1,9 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+
 <ion-header >
   <ion-toolbar>
     <ion-title class="tit_log">login</ion-title>
@@ -8,7 +14,7 @@
   <ion-avatar class="center-avatar">
     <img src="assets/images/user.png" alt="logo" class="logo">
   </ion-avatar>
-  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" class="form">
     
     <ion-item class="email">
     <ion-input label="Email" labelPlacement="floating" placeholder="Ingresa tu email" formControlName="email"></ion-input>

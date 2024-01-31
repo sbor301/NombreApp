@@ -1,14 +1,28 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+
 <ion-header >
   <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="goToLogin()">
+        <ion-icon name="arrow-back-outline" class="flecha" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title class="tit_log">REGISTRO</ion-title>
   </ion-toolbar>
 </ion-header>
   
+
   <ion-content>
+
   <ion-avatar class="center-avatar">
     <img src="assets/images/user.png" alt="logo" class="logo">
   </ion-avatar>
-  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+    
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)" class="form">
     <ion-item>
       <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingresa tu nombre" formControlName="nombre" type=""></ion-input>
     </ion-item>
