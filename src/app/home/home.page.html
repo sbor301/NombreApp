@@ -12,5 +12,15 @@
     </ion-toolbar>
 </ion-header>
 
+<ion-content>
+    <swiper-container
+    [pagination]="true"
+    [slidesPerView]="3">
+        <swiper-slide *ngFor="let slide of event_list">
+            <img src="{{slide.image}}">
+        </swiper-slide>
+    </swiper-container>
+</ion-content>
+
 
 <ion-button (click)="goToIntro()" color="warning"><p class="let_bot">Ir a la Intro</p></ion-button>

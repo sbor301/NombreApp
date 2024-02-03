@@ -54,9 +54,10 @@ export class LoginPage implements OnInit {
   login(login_data: any) {
     this.authService.loginUser(login_data).then(() => {
       console.log('Inicio de sesión correcto, me voy a la página principal');
-      this.navCtrl.navigateForward('/home'); 
+      this.navCtrl.navigateForward('menu/home'); 
     }).catch((error) => {
       console.log('Error al iniciar sesión:', error);
+      this.loginMessage = error;
     });
   }
 }

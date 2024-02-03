@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { MenuController } from '@ionic/angular';
+
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.page.html',
@@ -31,12 +33,13 @@ export class IntroPage {
     }
   ]
   constructor(private router: Router,
-    private storage: Storage) { }
+    private storage: Storage,
+    private menu: MenuController,) { }
 
     
   goToHome(){
     console.log("go to home");
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('menu/home');
     
     
   }
